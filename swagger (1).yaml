@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  description: The goal of our web application is to display a student's habit based on the weekda.
+  version: 1.0.0
+  title: Notify My Habit
+  # put the contact info for your development or API team
+  contact:
+    email: s542423@nwmissouri.edu
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+# tags are used for organizing operations
+tags:
+- name: admin
+  description: allot points to the users
+- name: Users
+  description: After the admin has given the user points, the user will receive them
+
+paths:
+  /givepoints:
+    post:
+      tags:
+      - admin
+      summary: add points to whom compelted habits
+      operationId: add points
+      description: Adds points to the users
+      responses:
+        201:
+          description: added points
+          
+  /receivepoints :
+    get:
+      tags:
+      - Users
+      summary: user will receive points
+      description: After the admin has given the user points, the user will receive them.
+      operationId: getLocations
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        405:
+          description: Invalid input
+definitions:
+  Admin:
+    type: object
+    required:
+    - id
+    - name
+    properties:
+      id:
+        type: integer
+  Users:
+    required:
+    - name
+    properties:
+      name:
+        type: string
+      id:
+        type: integer
+# Added by API Auto Mocking Plugin
+# host: notify-myhabit.herokuapp.com
+schemes:
+ - https
+# Added by API Auto Mocking Plugin
+# host: notify-myhabit.herokuapp.com
+# Added by API Auto Mocking Plugin
+# host: notify-myhabit.herokuapp.com
+# Added by API Auto Mocking Plugin
+# host:     notify-myhabit.herokuapp.com
+# Added by API Auto Mocking Plugin
+host: notify-myhabit.herokuapp.com
