@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  description: The goal of our web application is to display a student's habit based on the weekda.
+  description: The goal of our web application is to display a student's habit based on the weekday.
   version: 1.0.0
   title: Notify My Habit
   # put the contact info for your development or API team
